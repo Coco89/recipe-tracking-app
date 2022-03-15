@@ -8,7 +8,7 @@ function RecipeList({ recipes, handleDeleteRecipe }) {
 
   let recipeList = recipes.map((recipe, index) => {
     return (
-      <tr key={recipe.name}>
+      <tr key={index}>
         <Recipe
           index={index}
           name={recipe.name}

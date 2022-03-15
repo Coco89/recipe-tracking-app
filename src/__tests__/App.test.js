@@ -171,7 +171,8 @@ describe("App", () => {
       const { container } = render(<App />);
       const row = container.querySelector("table tbody tr");
       const content = within(row);
-      expect(content.getByText(/Tuna Poke with Mango/)).toBeInTheDocument();
+      const withTuna = content.getByText(/Tuna Poke with Mango/);
+      expect(withTuna).toBeInTheDocument();
       const deleteButton = content.getByText(/delete/i);
       fireEvent(
         deleteButton,
@@ -180,7 +181,8 @@ describe("App", () => {
           cancelable: true,
         })
       );
-      expect(content.queryByText(/Tuna Poke with Mango/)).toBeNull();
+      const qBT = content.queryByText(/Tuna Poke with Mango/);
+      expect(qBT).toBeNull();
     });
   });
 });

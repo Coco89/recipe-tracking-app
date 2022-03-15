@@ -15,18 +15,11 @@ function App() {
   };
 
   const deleteRecipe = (indexToDelete) => {
-    console.log("delete recipe called");
-    console.log("indexToDelete", typeof indexToDelete, indexToDelete);
-    setRecipes((currentRecipes) => {
-      let filteredRecipes = currentRecipes.filter(
+    setRecipes((currentRecipes) =>
+      currentRecipes.filter(
         (ignored, index) => index !== indexToDelete
-      );
-      console.log("filteredRecipes", filteredRecipes);
-      return filteredRecipes;
-    });
+      ));
   };
-
-  console.log("recipes", recipes);
 
   return (
     <div className="App">
